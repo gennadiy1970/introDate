@@ -136,3 +136,10 @@ article {
     color: #fff;
     background: #555;
 }
+
+table {
+  border-collapse:collapse;
+}
+th, td {
+  word-wrap:break-word
+}

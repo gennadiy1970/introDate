@@ -30,153 +30,188 @@ Date.now() = <span class="get-now"></span>
             </code></pre>
             <p>Как получить мск?</p>
             <pre><code>
-date.toString().slice(-3) = <span class="get-msc"></span> 
+date.toString()
+    .slice(-3) = <span class="get-msc"></span> 
             </code></pre>
             <p>Как получить секунды?</p> 
             <pre><code>
-date.toString().slice(-5).slice(0,2) % 60 = <span class="get-sec"></span> 
+date.toString()
+    .slice(-5)
+    .slice(0,2) % 60 = <span class="get-sec"></span> 
             </code></pre>
             <p>Как получить минуты?</p>
             <pre><code>
-(date.toString().slice(0,-3) / 60 % 60).toFixed(0) = <span class="get-min"></span>
+(date.toString()
+     .slice(0,-3) / 60 % 60)
+     .toFixed(0) = <span class="get-min"></span>
             </code></pre>
             <p>Не удобно и далее делать расчеты с периодом то в 60, то в 24, то в 7, а то в набор из значений 28, 29,
                 30, 31,
                 заботясь об учете високосного года.</p>
             <table id="native">
                 <caption>
-                    <p>Используем встроенные методы <b>new Date()</b></p>
+                    <p>Методы <b>new Date()</b></p>
                 </caption>
                 <thead>
                     <tr>
                         <th>метод</th>
-                        <th>возвращает</th>
+                        <!-- <th>возвращает</th> -->
                         <th>результат</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>getTime()</td>
-                        <td>Timestamp</td>
+                        <td>getTime()
+                            <div class="comment">
+                                Timestamp
+                            </div>
+                        </td>
                         <td class="td-time"></td>
                     </tr>
                     <tr>
-                        <td>toTimeString()</td>
-                        <td>строка с временем</td>
+                        <td>toTimeString()
+                            <div class="comment">
+                                строка "время"
+                            </div>
+
+                        </td>
                         <td class="td-time-string"></td>
                     </tr>
                     <tr>
-                        <td>toDateString()</td>
-                        <td>строка с датой</td>
+                        <td>toDateString()
+                            <div class="comment">
+                                строка "дата"
+                            </div>
+                        </td>
                         <td class="td-date-string"></td>
                     </tr>
                     <tr>
-                        <td>toLocaleTimeString()</td>
-                        <td>строка с временем</td>
+                        <td>toLocaleTimeString()
+                            <div class="comment">
+                                строка локальное "время"
+                            </div>
+                        </td>
                         <td class="td-ltime-string"></td>
                     </tr>
                     <tr>
-                        <td>toLocaleDateString()</td>
-                        <td>строка с датой</td>
+                        <td>toLocaleDateString()
+                            <div class="comment">
+                                строка локальная "дата"
+                            </div>
+                        </td>
                         <td class="td-ldate-string"></td>
                     </tr>
                     <tr>
-                        <td>getTimezoneOffset()</td>
-                        <td>смещение часового пояса</td>
+                        <td>getTimezoneOffset()
+                            <div class="comment">
+                                смещение часового пояса
+                            </div>
+                        </td>
                         <td class="td-time-zone"></td>
                     </tr>
                     <tr>
-                        <td colspan="3" class="center">Время</td>
+                        <td colspan="2" class="center">Время</td>
                     </tr>
                     <tr>
-                        <td>getMilliseconds()</td>
-                        <td>миллисекунды</td>
+                        <td>getMilliseconds()
+                        </td>
                         <td class="td-msc"></td>
                     </tr>
                     <tr>
-                        <td>getSeconds()</td>
-                        <td>секунды</td>
+                        <td>getSeconds()
+
+                        </td>
                         <td class="td-sec"></td>
                     </tr>
                     <tr>
                         <td>getMinutes()</td>
-                        <td>минуты</td>
                         <td class="td-min"></td>
                     </tr>
                     <tr>
                         <td>getHours()</td>
-                        <td>часы</td>
                         <td class="td-hrs"></td>
                     </tr>
                     <tr>
-                        <td colspan="3" class="center">UTC Время</td>
+                        <td colspan="2" class="center">UTC Время</td>
                     </tr>
                     <tr>
                         <td>getUTCMilliseconds()</td>
-                        <td>миллисекунды</td>
                         <td class="td-msc-utc"></td>
                     </tr>
                     <tr>
                         <td>getUTCSeconds()</td>
-                        <td>секунды</td>
                         <td class="td-sec-utc"></td>
                     </tr>
                     <tr>
                         <td>getUTCMinutes()</td>
-                        <td>минуты</td>
                         <td class="td-min-utc"></td>
                     </tr>
                     <tr>
                         <td>getUTCHours()</td>
-                        <td>часы</td>
                         <td class="td-hrs-utc"></td>
                     </tr>
 
                     <tr>
-                        <td colspan="3" class="center">Даты</td>
+                        <td colspan="2" class="center">Даты</td>
                     </tr>
                     <tr>
-                        <td>getDay()</td>
-                        <td>День недели (отсчет с 0 и с воскресенья)</td>
+                        <td>getDay()
+                            <div class="comment">
+                                День недели (отсчет с 0 и с воскресенья)
+                            </div>
+                        </td>
                         <td class="td-day"></td>
                     </tr>
                     <tr>
-                        <td>getDate()</td>
-                        <td>Дни месяца (отсчет с 0)</td>
+                        <td>getDate()
+                            <div class="comment">
+                                Дни месяца (отсчет с 1)
+                            </div>
+                        </td>
                         <td class="td-dts"></td>
                     </tr>
                     <tr>
-                        <td>getMonth()</td>
-                        <td>Месяц (отсчет с 0)</td>
+                        <td>getMonth()
+                            <div class="comment">
+                                Месяц (отсчет с 0)
+                            </div>
+                        </td>
                         <td class="td-mns"></td>
                     </tr>
                     <tr>
                         <td>getFullYear()</td>
-                        <td>Год</td>
                         <td class="td-year"></td>
                     </tr>
 
                     <tr>
-                        <td colspan="3" class="center">UTC Даты</td>
+                        <td colspan="2" class="center">UTC Даты</td>
                     </tr>
                     <tr>
-                        <td>getUTCDay()</td>
-                        <td>День недели (отсчет с 0 и с воскресенья)</td>
+                        <td>getUTCDay()
+                            <div class="comment">
+                                День недели (отсчет с 0 и с воскресенья)
+                            </div>
+                        </td>
                         <td class="td-day-utc"></td>
                     </tr>
                     <tr>
-                        <td>getUTCDate()</td>
-                        <td>Дни месяца (отсчет с 0)</td>
+                        <td>getUTCDate()
+                            <div class="comment">
+                                Дни месяца (отсчет с 1) 
+                            </div>
+                        </td>
                         <td class="td-dts-utc"></td>
                     </tr>
                     <tr>
-                        <td>getUTCMonth()</td>
-                        <td>Месяц (отсчет с 0)</td>
+                        <td>getUTCMonth()
+                            <div class="comment">
+                                Месяц (отсчет с 0)
+                            </div>
+                        </td>
                         <td class="td-mns-utc"></td>
                     </tr>
                     <tr>
                         <td>getUTCFullYear()</td>
-                        <td>Год</td>
                         <td class="td-year-utc"></td>
                     </tr>
                 </tbody>
@@ -185,8 +220,15 @@ date.toString().slice(-5).slice(0,2) % 60 = <span class="get-sec"></span>
             <p>Как рассчитать время между двумя событиями? Узнать какой день недели или месяца будет через 100 дней?
                 Для этого можно использовать конструктор объекта new Date () или методы set этого объекта:</p>
             <pre><code>
-const days100 = 1000 * 60 * 60 * 24 * 100;
-const date = new Date (Date.now() + days100)
+const days100 = 1000<span class="comment">s</span>
+                * 60<span class="comment">m</span>
+                * 60<span class="comment">h</span>
+                * 24<span class="comment">d</span>
+                * 100;
+const date = new Date (
+                Date.now() 
+                + days100
+                )
 
 date.getFullYear() <span class="comment set-fullyear"></span>
 date.getMonth()    <span class="comment set-month"></span>
@@ -195,9 +237,14 @@ date.getDay()      <span class="comment set-day"></span>
                 </code></pre>
             <p>Можно получить объект и встроенным методом добавить пару месяцев, изменив объект:</p>
             <pre><code>
-const next2month = new Date ();
-next2month.setMonth(2 + next2month.getMonth());
-next2month.getMonth()  <span class="comment get-month"></span>          
+const add2Month = new Date();
+
+add2Month.setMonth(
+  2 + add2Month.getMonth()
+);
+
+add2Month.getMonth()  
+<span class="comment get-month"></span>          
                 </code></pre>
         </section>
         <section>
@@ -210,50 +257,76 @@ next2month.getMonth()  <span class="comment get-month"></span>
 
             <table>
                 <caption>
-                    <p>Используем встроенные методы <b>Moment.js</b></p>
+                    <p>Методы <b>Moment.js</b></p>
                 </caption>
                 <thead>
                     <tr>
-                        <th>метод</th>
-                        <th>результат</th>
+                        <th>метод 
+                            <p class="comment">результат</p>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="3" class="center">Unix Timestamp</td>
+                        <td colspan="1" class="center">Unix Timestamp</td>
                     </tr>
                     <tr>
-                        <td>moment().format(x)</td>
-                        <td class="moment-timestamp"></td>
+                        <td><pre>
+moment()
+  .format(x)
+  <span class="comment moment-timestamp"></span>  
+                        </pre></td>
                     </tr>
                     <tr>
-                        <td colspan="3" class="center">Время и даты</td>
+                        <td colspan="1" class="center">Время и даты</td>
                     </tr>
                     <tr>
-                        <td>moment().format()</td>
-                        <td class="moment-default"></td>
+                        <td><pre>
+moment()
+  .format('MMMM Do YYYY')
+  <span class="comment moment-default"></span> 
+                        </pre></td>
                     </tr>
                     <tr>
-                        <td>moment().format('MMMM Do YYYY, h:mm:ss');</td>
-                        <td class="moment-full"></td>
+                        <td><pre>
+moment()
+  .format('h:mm:ss');
+  <span class="comment moment-full"></span>
+                        </pre></td>
                     </tr>
                     <tr>
-                        <td>moment().format('h:mm:ss:SSS')</td>
-                        <td class="moment-time"></td>
+                        <td><pre>
+moment()
+  .format('h:mm:ss:SSS')
+  <span class="comment moment-time"></span>
+                        </pre></td>
                     </tr>
                     <tr>
-                        <td colspan="3" class="center">Задать смещение +100 дней</td>
+                        <td colspan="1" class="center">Задать смещение +100 дней</td>
                     </tr>
                     <tr>
-                        <td>moment().add(100, 'days').format('MMMM Do YYYY)</td>
-                        <td class="moment-add100"></td>
+                        <td>
+                            <pre>
+
+moment()
+ .add(100, 'days')
+ .format('MMMM Do YYYY)
+
+ <span class="comment moment-add100"></span>
+</pre></td>
+                        <!-- <td class="moment-add100"></td> -->
                     </tr>
                     <tr>
-                        <td colspan="3" class="center">Задать смещение -45 минут</td>
+                        <td colspan="1" class="center">Задать смещение -45 минут</td>
                     </tr>
                     <tr>
-                        <td>moment().subtract(45, 'm').format('h:mm:ss)</td>
-                        <td class="moment-add45"></td>
+                        <td><pre>
+
+moment()
+  .subtract(45, 'm')
+  .format('h:mm:ss)
+<span class="comment moment-add45"></span>
+                        </pre></td>
                     </tr>
                 </tbody>
             </table>

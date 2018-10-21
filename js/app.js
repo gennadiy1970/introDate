@@ -84,8 +84,8 @@ setInterval(function() {
     next2month.setMonth(next2month.getMonth() + 2);
     next2month.getMonth()
     getMonth.textContent = next2month.getMonth();
-    momentDefault.textContent = moment().format();
-    momentFull.textContent = moment().format('MMMM Do YYYY, h:mm:ss');
+    momentDefault.textContent = moment().format('MMMM Do YYYY');
+    momentFull.textContent = moment().format('h:mm:ss');
     momentTime.textContent = moment().format('h:mm:ss:SSS');
     momentTimeStamp.textContent = moment().format('x');
     momentAdd100.textContent = moment().add(100, 'days').format('MMMM Do YYYY');
