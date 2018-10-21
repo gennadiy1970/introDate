@@ -3,6 +3,11 @@ const elemGetMsc = document.querySelector('.get-msc');
 const elemGetSec = document.querySelector('.get-sec');
 const elemGetMin = document.querySelector('.get-min');
 const nativeDate = document.getElementById('native');
+const tdGetTime = nativeDate.querySelector('.td-time');
+const tdToTimeString = nativeDate.querySelector('.td-time-string');
+const tdToDateString = nativeDate.querySelector('.td-date-string');
+const tdToLTimeString = nativeDate.querySelector('.td-ltime-string');
+const tdToLDateString = nativeDate.querySelector('.td-ldate-string');
 const tdGetMsc = nativeDate.querySelector('.td-msc');
 const tdGetSec = nativeDate.querySelector('.td-sec');
 const tdGetMin = nativeDate.querySelector('.td-min');
@@ -41,6 +46,12 @@ setInterval(function() {
     elemGetMin.textContent = (date.toString().slice(0,-3) / 60 % 60).toFixed(0);
     const today = new Date(date);
     tdGetTimezoneOffset.textContent = today.getTimezoneOffset();
+     /**  TIMESTAMP */
+    tdGetTime.textContent = today.getTime();
+    tdToTimeString.textContent = today.toTimeString();
+    tdToDateString.textContent = today.toDateString();
+    tdToLTimeString.textContent = today.toLocaleTimeString();
+    tdToLDateString.textContent = today.toLocaleDateString();
     /**  TIME */
     tdGetMsc.textContent = today.getMilliseconds();
     tdGetSec.textContent = today.getSeconds();

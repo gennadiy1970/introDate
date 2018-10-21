@@ -22,8 +22,9 @@
             <h3>class Date</h3>
             <p>const <b>date</b> = <b>new Date ()</b></p>
             <h4>Static method Date.now()</h4> 
-            <p>Возвращает число миллисекунд, прошедших с с 0 часов, 0 минут и 0 мск первого
-                января 1970 года по Гринвичу</p>
+            <p>Возвращает число миллисекунд (<b>Timestamp</b>), прошедших с с 0 часов, 0 минут и 0 мск первого
+                января 1970 года по Гринвичу с добавлением поправки на часовой пояс.
+            Значение времени берется из системного времени устройства.</p>
             <pre><code>
 Date.now() = <span class="get-now"></span>
             </code></pre>
@@ -54,6 +55,31 @@ date.toString().slice(-5).slice(0,2) % 60 = <span class="get-sec"></span>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>getTime()</td>
+                        <td>Timestamp</td>
+                        <td class="td-time"></td>
+                    </tr>
+                    <tr>
+                        <td>toTimeString()</td>
+                        <td>строка с временем</td>
+                        <td class="td-time-string"></td>
+                    </tr>
+                    <tr>
+                        <td>toDateString()</td>
+                        <td>строка с датой</td>
+                        <td class="td-date-string"></td>
+                    </tr>
+                    <tr>
+                        <td>toLocaleTimeString()</td>
+                        <td>строка с временем</td>
+                        <td class="td-ltime-string"></td>
+                    </tr>
+                    <tr>
+                        <td>toLocaleDateString()</td>
+                        <td>строка с датой</td>
+                        <td class="td-ldate-string"></td>
+                    </tr>
                     <tr>
                         <td>getTimezoneOffset()</td>
                         <td>смещение часового пояса</td>
